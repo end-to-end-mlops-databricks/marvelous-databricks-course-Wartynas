@@ -1,0 +1,32 @@
+catalog_name: mlops_dev
+schema_name: diabetes
+
+num_features:
+  - BMI
+  - MentHlth
+  - PhysHlth
+
+
+cat_features:
+  - HighBP
+  - HighChol
+  - CholCheck
+  - Smoker
+  - Stroke
+  - HeartDiseaseorAttack
+  - PhysActivity
+  - Fruits
+  - Veggies
+  - HeavyAlcoholConsump
+  - AnyHealthcare
+  - NoDocbcCost
+  - GenHlth
+  - DiffWalk
+  - Sex
+  - Age
+  - Education
+  - Income
+
+
+
+target: Diabetes_012
