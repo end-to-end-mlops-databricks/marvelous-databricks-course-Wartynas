@@ -1,11 +1,13 @@
 catalog_name: mlops_dev
 schema_name: diabetes
 
+seed: 42
+test_size: 0.2
+
 num_features:
   - BMI
   - MentHlth
   - PhysHlth
-
 
 cat_features:
   - HighBP
@@ -26,7 +28,5 @@ cat_features:
   - Age
   - Education
   - Income
-
-
 
 target: Diabetes_012
