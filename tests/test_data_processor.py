@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
 import numpy as np
-from src.data_processor import DataProcessor
+from src.diabetes.data_processor import DataProcessor
 
 
 @pytest.fixture
