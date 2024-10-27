@@ -1,7 +1,7 @@
 [project]
-name = "mlops-with-databricks"
+name = "diabetes"
 version = "0.0.1"
-description = "MLOps with Databricks"
+description = "Diabetes prediction"
 readme = "README.md"
 requires-python = "==3.11.10"
 dependencies = ["lightgbm>=4.5.0, <5",
