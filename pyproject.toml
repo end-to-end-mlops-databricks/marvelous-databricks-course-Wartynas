@@ -1,9 +1,9 @@
 [project]
-name = "mlops-with-databricks"
+name = "diabetes"
 version = "0.0.1"
-description = "MLOps with Databricks"
+description = "Diabetes prediction"
 readme = "README.md"
-requires-python = "==3.11.10"
+requires-python = ">=3.11, <3.12"
 dependencies = ["lightgbm>=4.5.0, <5",
                 "scikit-learn>=1.5.1, <2",
                 "cloudpickle>=3.0.0, <4",
@@ -20,18 +20,20 @@ dependencies = ["lightgbm>=4.5.0, <5",
 dev = ["databricks-connect>=15.4.1, <16",
        "databricks-sdk>=0.32.0, <0.33",
        "ipykernel>=6.29.5, <7",
-       "pip>=24.2"]
+       "pip>=24.2",
+       "pytest>=8.3.3, <9",
+       "pre-commit>=3.8, <4"]
 
 [tool.ruff]
 line-length = 120
-select = [
+lint.select = [
     "F",  # pyflakes rules
     "E",  # pycodestyle error rules
     "W",  # pycodestyle warning rules
     "B",  # flake8-bugbear rules
     "I",  # isort rules
 ]
-ignore = [
+lint.ignore = [
     "E501",  # line-too-long
 ]
 
