@@ -1,7 +1,7 @@
 import pytest
 import pandas as pd
 import numpy as np
-from diabetes.data_processor import DataProcessor
+from src.diabetes.data_processor import DataProcessor
 
 
 def test_load_data(data_processor, sample_data):

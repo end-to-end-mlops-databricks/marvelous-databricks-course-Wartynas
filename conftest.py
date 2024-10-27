@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-from diabetes.data_processor import DataProcessor
+from src.diabetes.data_processor import DataProcessor
 
 @pytest.fixture
 def sample_data():
