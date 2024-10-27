@@ -1,7 +1,5 @@
 import yaml
 import logging
-
-
 from diabetes.data_processor import DataProcessor
 
 

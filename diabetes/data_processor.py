@@ -47,8 +47,8 @@ class DataProcessor:
             ])
         
     
-    def split_data(self):
-        return train_test_split(self.X, self.y, test_size=float(self.config["test_size"]), random_state=int(self.config["seed"]))
+    def split_data(self, test_size, random_state):
+        return train_test_split(self.X, self.y, test_size=test_size, random_state=random_state)
 
 
 
