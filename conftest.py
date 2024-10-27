@@ -1,24 +1,26 @@
-import pytest
 import pandas as pd
+import pytest
+
 from src.diabetes.data_processor import DataProcessor
+
 
 @pytest.fixture
 def sample_data():
-    return pd.DataFrame({
-        'num1': [1, 2, 3, 4, 5],
-        'num2': [5, 4, 3, 2, 1],
-        'cat1': ['A', 'B', 'C', 'A', 'B'],
-        'cat2': ['X', 'Y', 'Z', 'X', 'Y'],
-        'target': [10, 20, 30, 40, 50]
-    })
+    return pd.DataFrame(
+        {
+            "num1": [1, 2, 3, 4, 5],
+            "num2": [5, 4, 3, 2, 1],
+            "cat1": ["A", "B", "C", "A", "B"],
+            "cat2": ["X", "Y", "Z", "X", "Y"],
+            "target": [10, 20, 30, 40, 50],
+        }
+    )
+
 
 @pytest.fixture
 def sample_config():
-    return {
-        'num_features': ['num1', 'num2'],
-        'cat_features': ['cat1', 'cat2'],
-        'target': 'target'
-    }
+    return {"num_features": ["num1", "num2"], "cat_features": ["cat1", "cat2"], "target": "target"}
+
 
 @pytest.fixture
 def data_processor(tmp_path, sample_data, sample_config):

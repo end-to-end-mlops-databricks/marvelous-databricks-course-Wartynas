@@ -1,14 +1,15 @@
-import yaml
 import logging
+
+import yaml
+
 from diabetes.data_processor import DataProcessor
 
-
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 
 # Load configuration
-with open('config.yml', 'r') as file:
+with open("config.yml", "r") as file:
     config = yaml.safe_load(file)
 
 logger.info("Configuration loaded:")
@@ -16,7 +17,7 @@ print(yaml.dump(config, default_flow_style=False))
 
 
 # Initialize DataProcessor
-data_processor = DataProcessor('data/diabetes_multiclass.csv', config)
+data_processor = DataProcessor("data/diabetes_multiclass.csv", config)
 logger.info("DataProcessor initialized.")
 
 # Preprocess the data
@@ -25,7 +26,7 @@ logger.info("Data preprocessed.")
 
 # Split the data
 X_train, X_test, y_train, y_test = data_processor.split_data()
-logger.info(f"Data split into training and test sets.")
+logger.info("Data split into training and test sets.")
 logger.info(f"Training set shape: {X_train.shape}, Test set shape: {X_test.shape}")
 
 # # Initialize and train the model
