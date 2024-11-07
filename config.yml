@@ -19,7 +19,7 @@ cat_features:
   - PhysActivity
   - Fruits
   - Veggies
-  - HeavyAlcoholConsump
+  - HvyAlcoholConsump
   - AnyHealthcare
   - NoDocbcCost
   - GenHlth

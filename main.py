@@ -2,7 +2,10 @@ import logging
 
 import yaml
 
-from diabetes.data_processor import DataProcessor
+from src.diabetes.data_processor import DataProcessor
+from databricks.connect import DatabricksSession
+
+spark = DatabricksSession.builder.getOrCreate()
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -28,6 +31,14 @@ logger.info("Data preprocessed.")
 X_train, X_test, y_train, y_test = data_processor.split_data()
 logger.info("Data split into training and test sets.")
 logger.info(f"Training set shape: {X_train.shape}, Test set shape: {X_test.shape}")
+
+# Save data to the volume
+data_processor.save_to_catalog(
+    train_set=X_train,
+    test_set=X_test,
+    spark=spark
+)
+logger.info("Data saved as delta tables.")
 
 # # Initialize and train the model
 # model = PriceModel(data_processor.preprocessor, config)
