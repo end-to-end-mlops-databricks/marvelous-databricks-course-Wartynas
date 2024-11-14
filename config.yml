@@ -30,3 +30,9 @@ cat_features:
   - Income
 
 target: Diabetes_012
+
+model_parameters:
+  obj_fn: "multi:softmax"
+  n_estimators: 1000
+  max_depth: 6
+  learning_rate: 0.01
