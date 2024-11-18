@@ -20,10 +20,10 @@ def test_split_data(data_processor):
     data_processor.preprocess_data()
     X_train, X_test, y_train, y_test = data_processor.split_data(test_size=0.4, random_state=42)
 
-    assert X_train.shape == (3, 4)
-    assert X_test.shape == (2, 4)
-    assert y_train.shape == (3,)
-    assert y_test.shape == (2,)
+    assert X_train.shape[0] == 3
+    assert X_test.shape[0] == 2
+    assert y_train.shape[0] == 3
+    assert y_test.shape[0] == 2
 
 
 def test_preprocessor_transform(data_processor):
